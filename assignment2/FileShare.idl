@@ -1,0 +1,38 @@
+module assignment2 {
+	
+	interface FileShare {
+	
+		struct ClientInfo {
+			string ipAddress;
+			long port;
+		};
+	
+		//Register File
+		void registerFile(
+			in string ownerID,
+			in string fileName,
+			in boolean shared
+		);
+		
+		//Update File's share status
+		void updateFile(
+			in string ownerID,
+			in string fileName,
+			in boolean shared
+		);
+		
+		
+		//Search whether files exists 
+		boolean searchFile(
+			in string fileName
+		);
+		
+		
+		//Get owner of file to build socket and download
+		 ClientInfo downloadFile(
+			in string fileName
+		);
+		
+	};
+
+};
